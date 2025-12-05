@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Source') {
+            steps {
+                git branch: 'main', url: 'https://github.com/GalihAzzahra/pertemuan-13.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'composer install'
+            }
+        }
+
+        stage('Run PHP App') {
+            steps {
+                sh 'php index.php'
+            }
+        }
+
+        stage('Run Unit Test') {
+            steps {
+                sh './vendor/bin/phpunit'
+            }
+        }
+    }
+}
