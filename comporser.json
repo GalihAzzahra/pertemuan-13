@@ -1,0 +1,16 @@
+{
+  "name": "galihazzahra/pertemuan-13",
+  "description": "Project PHP untuk CI/CD Jenkins dan Unit Test",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12.0"
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
+}
